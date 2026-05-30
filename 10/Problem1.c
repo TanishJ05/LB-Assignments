@@ -1,31 +1,25 @@
 #include<stdio.h>
 
-void RangeDisplay(int iStart, int iEnd)
+double CircleArea(float fRadius)
 {
-    int iCnt = 0;
-    if(iStart > iEnd)
-    {
-        printf("Invalid Range\n");
-        return;
-    }
-    for(iCnt = iStart; iCnt <= iEnd; iCnt++)
-    {
-        printf("%d ",iCnt);
-    }
-    printf("\n");
+    double dArea = 0.0;
+    dArea = 3.14 * fRadius * fRadius;
+    return dArea;
+
 }
 
 int main()
 {
-    int iValue1 = 0;
-    int iValue2 = 0;
+    float fValue = 0.0f;
+    double dRet = 0.0;
+    printf("enter the radius : ");
+    scanf("%f",&fValue);
 
-    printf("Enter the starting point : ");
-    scanf("%d",&iValue1);
-    printf("Enter the ending point : ");
-    scanf("%d",&iValue2);
+    dRet = CircleArea(fValue);
 
-    RangeDisplay(iValue1, iValue2);
+    printf("Area of Circle is : %lf\n",dRet);
+
     return 0;
 }
-// Time complexity - O(N) where N is the number of elements in the range.
+
+// Time Complexity - O(1)

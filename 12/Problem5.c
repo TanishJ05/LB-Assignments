@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int OddDigit(int iNo)
+int CountFreq(int iNo)
 {
     int iCount = 0;
     int iDigit = 0;
@@ -8,7 +8,7 @@ int OddDigit(int iNo)
     while(iNo != 0)
     {
         iDigit = iNo % 10;
-        if( iDigit % 2 != 0 )
+        if( iDigit < 6 )
         {
             iCount++;
         }
@@ -22,7 +22,7 @@ int main()
     int iRet = 0;
     printf("Enter the number : \n");
     scanf("%d",&iValue);
-    iRet = OddDigit(iValue);
+    iRet = CountFreq(iValue);
     printf("%d\n",iRet);
     return 0;
 }

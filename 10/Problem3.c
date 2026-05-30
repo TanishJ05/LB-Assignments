@@ -1,33 +1,28 @@
 #include<stdio.h>
 
-void RangeSum(int iStart, int iEnd)
+int KmToMeter(int iNo)
 {
-    int iCnt = 0;
-    int iSum = 0;
-    if(iStart > iEnd)
+    int iAns = 0;
+    if(iNo < 0)
     {
-        printf("Invalid Range\n");
-        return;
+        iNo = -iNo;
     }
-    for(iCnt = iStart; iCnt <= iEnd; iCnt++)
-    {
-        iSum = iSum + iCnt;
-    }
-    printf("Sum of numbers in the range is : %d",iSum);
-    printf("\n");
+    iAns = iNo * 1000;
+    return iAns;
 }
 
 int main()
 {
-    int iValue1 = 0;
-    int iValue2 = 0;
+    int iValue = 0;
+    int iRet = 0;
+     printf("Enter the Distance : ");
+     scanf("%d",&iValue);
 
-    printf("Enter the starting point : ");
-    scanf("%d",&iValue1);
-    printf("Enter the ending point : ");
-    scanf("%d",&iValue2);
+     iRet = KmToMeter(iValue);
 
-    RangeSum(iValue1, iValue2);
-    return 0;
+    printf("Distance in Meter is : %d\n",iRet);
+
+     return 0;
 }
-// Time complexity - O(N)
+
+// Time complexity - O(1)

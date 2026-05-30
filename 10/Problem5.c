@@ -1,34 +1,30 @@
 #include<stdio.h>
 
-void RangeDisplayReverse(int iStart, int iEnd)
+double SquareMeter(int iValue)
 {
-    int iCnt = 0;
-    if(iStart > iEnd)
+    double dAns = 0.0;
+    if(iValue < 0)
     {
-        printf("Invalid Range\n");
-        return;
+        iValue = -iValue;
     }
-    for(iCnt = iEnd; iCnt >= iStart; iCnt--)
-    {
-        printf("%d ",iCnt);
-    }
-    printf("\n");
+    dAns = iValue * 0.0929;
+    return dAns;
 }
 
 int main()
 {
-    int iValue1 = 0;
-    int iValue2 = 0;
+    int iValue = 0;
+    double dRet = 0;
+
+    printf("Enter Area in Square Feet : ");
+    scanf("%d",&iValue);
+
+    dRet = SquareMeter(iValue);
+
+    printf("Area in Square Meter is : %lf\n",dRet);
     
-
-    printf("Enter the starting point : ");
-    scanf("%d",&iValue1);
-    printf("Enter the ending point : ");
-    scanf("%d",&iValue2);
-
-    RangeDisplayReverse(iValue1, iValue2);
-
-
+    
     return 0;
 }
-// Time complexity - O(N) where N is the number of elements in the range.
+
+// Time complexity - O(1)

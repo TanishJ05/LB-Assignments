@@ -1,34 +1,30 @@
 #include<stdio.h>
 
-void RangeDisplayEven(int iStart, int iEnd)
+double RectangleArea(float fHeight, float fWidth)
 {
-    int iCnt = 0;
-    if(iStart > iEnd)
-    {
-        printf("Invalid Range\n");
-        return;
-    }
-    for(iCnt = iStart; iCnt <= iEnd; iCnt++)
-    {
-        if((iCnt % 2) == 0)
-        {
-            printf("%d ",iCnt);
-        }
-    }
-    printf("\n");
+    double dArea = 0.0;
+    dArea = fHeight * fWidth;
+    return dArea;
+
 }
 
 int main()
 {
-    int iValue1 = 0;
-    int iValue2 = 0;
+    float fValue1 = 0.0f;
+    float fValue2 = 0.0f;
+    double dRet = 0.0;
+    
+        printf("enter the height : ");
+        scanf("%f",&fValue1);
+    
+        printf("enter the width : ");
+        scanf("%f",&fValue2);
 
-    printf("Enter the starting point : ");
-    scanf("%d",&iValue1);
-    printf("Enter the ending point : ");
-    scanf("%d",&iValue2);
+    dRet = RectangleArea(fValue1,fValue2);
 
-    RangeDisplayEven(iValue1, iValue2);
+    printf("Area of Rectangle is : %lf\n",dRet);
+
     return 0;
 }
-// Time complexity - O(N)
+
+// Time Complexity - O(1)

@@ -1,25 +1,28 @@
 #include<stdio.h>
 
-double CircleArea(float fRadius)
+int EvenDigit(int iNo)
 {
-    double dArea = 0.0;
-    dArea = 3.14 * fRadius * fRadius;
-    return dArea;
-
+    int iCount = 0;
+    int iDigit = 0;
+        
+    while(iNo != 0)
+    {
+        iDigit = iNo % 10;
+        if( iDigit % 2 == 0 )
+        {
+            iCount++;
+        }
+        iNo = iNo / 10;
+    }
+    return iCount;
 }
-
 int main()
 {
-    float fValue = 0.0f;
-    double dRet = 0.0;
-    printf("enter the radius : ");
-    scanf("%f",&fValue);
-
-    dRet = CircleArea(fValue);
-
-    printf("Area of Circle is : %lf\n",dRet);
-
+    int iValue = 0;
+    int iRet = 0;
+    printf("Enter the number : \n");
+    scanf("%d",&iValue);
+    iRet = EvenDigit(iValue);
+    printf("%d\n",iRet);
     return 0;
 }
-
-// Time Complexity - O(1)

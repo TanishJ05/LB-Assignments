@@ -1,28 +1,28 @@
 #include<stdio.h>
 
-int KmToMeter(int iNo)
+int CountRange(int iNo)
 {
-    int iAns = 0;
-    if(iNo < 0)
+    int iCount = 0;
+    int iDigit = 0;
+        
+    while(iNo != 0)
     {
-        iNo = -iNo;
+        iDigit = iNo % 10;
+        if( iDigit >= 3 && iDigit <= 7 )
+        {
+            iCount++;
+        }
+        iNo = iNo / 10;
     }
-    iAns = iNo * 1000;
-    return iAns;
+    return iCount;
 }
-
 int main()
 {
     int iValue = 0;
     int iRet = 0;
-     printf("Enter the Distance : ");
-     scanf("%d",&iValue);
-
-     iRet = KmToMeter(iValue);
-
-    printf("Distance in Meter is : %d\n",iRet);
-
-     return 0;
+    printf("Enter the number : \n");
+    scanf("%d",&iValue);
+    iRet = CountRange(iValue);
+    printf("%d\n",iRet);
+    return 0;
 }
-
-// Time complexity - O(1)

@@ -1,30 +1,35 @@
 #include<stdio.h>
 
-double SquareMeter(int iValue)
+int DiffOfDigit(int iNo)
 {
-    double dAns = 0.0;
-    if(iValue < 0)
-    {
-        iValue = -iValue;
-    }
-    dAns = iValue * 0.0929;
-    return dAns;
+    int iDigit = 0;
+    int iSumEven = 0, iSumOdd = 0, iDiff = 0;
+        
+        
+        while(iNo != 0)
+        {
+            iDigit = iNo % 10;
+            if( iDigit % 2 == 0 )
+            {
+                iSumEven = iSumEven + iDigit;
+            }
+            else{
+                iSumOdd = iSumOdd + iDigit;
+            }
+            iNo = iNo / 10;
+            
+        }
+        iDiff = iSumEven - iSumOdd;
+        
+    return iDiff; 
 }
-
 int main()
 {
     int iValue = 0;
-    double dRet = 0;
-
-    printf("Enter Area in Square Feet : ");
+    int iRet = 0;
+    printf("Enter the number : \n");
     scanf("%d",&iValue);
-
-    dRet = SquareMeter(iValue);
-
-    printf("Area in Square Meter is : %lf\n",dRet);
-    
-    
+    iRet = DiffOfDigit(iValue);
+    printf("%d\n",iRet);
     return 0;
 }
-
-// Time complexity - O(1)

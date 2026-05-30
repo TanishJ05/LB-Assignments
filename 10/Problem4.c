@@ -1,36 +1,23 @@
 #include<stdio.h>
 
-void RangeSumEven(int iStart, int iEnd)
+double FhToCs(float fTemp)
 {
-    int iCnt = 0;
-    int iSum = 0;
-    if(iStart > iEnd)
-    {
-        printf("Invalid Range\n");
-        return;
-    }
-    for(iCnt = iStart; iCnt <= iEnd; iCnt++)
-    {
-        if((iCnt % 2) == 0)
-        {
-            iSum = iSum + iCnt;
-        }
-    }
-    printf("Sum of numbers in the range is : %d",iSum);
-    printf("\n");
+    double dTemperature = 0.0;
+    dTemperature = (fTemp - 32) * 5 / 9;
+    return dTemperature;   
 }
 
 int main()
 {
-    int iValue1 = 0;
-    int iValue2 = 0;
+    float fValue = 0.0f;
+    double dRet = 0.0;
+    printf("enter the temperature in Fahrenheit : ");
+    scanf("%f",&fValue);
 
-    printf("Enter the starting point : ");
-    scanf("%d",&iValue1);
-    printf("Enter the ending point : ");
-    scanf("%d",&iValue2);
+    dRet = FhToCs(fValue);
 
-    RangeSumEven(iValue1, iValue2);
+    printf("Temperature in Celsius is : %lf\n",dRet);
+    
     return 0;
 }
-// Time complexity - O(N)
+// Time complexity - O(1)
