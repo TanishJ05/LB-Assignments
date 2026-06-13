@@ -2,18 +2,20 @@ import java.util.*;
 
 class DigitX
 {
-    public void Table(int iNo)
+    public void OddNum(int iNo)
     {
-        int iCnt = 0,iMult = 0;
-        for(iCnt = 1 ; iCnt <= 10; iCnt++)
+        int iCnt = 0;
+        for(iCnt = 1 ; iCnt <= iNo; iCnt++)
         {
-            iMult = iNo * iCnt;
-            System.out.println(iNo+ "x" +iCnt +"=" +iMult);
+            if(iCnt % 2 != 0)
+            {
+                System.out.println(+iCnt);
+            }
         }
         
     }
 }
-class problem5
+class problem3
 {
     public static void main(String A[])
     {
@@ -25,7 +27,7 @@ class problem5
         System.out.println("Enter the number : ");
         iValue = sobj.nextInt();
 
-        dobj.Table(iValue);
+        dobj.OddNum(iValue);
 
     }
 }
